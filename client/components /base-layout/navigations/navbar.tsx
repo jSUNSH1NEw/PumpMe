@@ -120,43 +120,27 @@ const NavBar = () => {
     {
       ...(router.locale === "fr"
         ? {
-            text: "Echange",
+            text: "Livre",
           }
-        : { text: "Exchange" }),
+        : { text: "Lite-paper" }),
 
-      url: "/exchange",
-    },
-    {
-      text: "Trading",
-      url: "/trading",
-    },
-    {
-      text: "ICO",
-      url: "/ico",
+      url: "/litepaper",
     },
     {
       ...(router.locale === "fr"
         ? {
-            text: "Gouvernance",
+            text: "Ecosystem",
           }
-        : { text: "Governance" }),
-      url: "/governance",
-    },
-    {
-      text: "Adventures",
-      url: "/adventure",
+        : { text: "Ecosystem" }),
+      url: "/Ecosystem",
     },
     {
       ...(router.locale === "fr"
         ? {
-            text: "À propos",
+            text: "Comment jouer",
           }
-        : { text: "About us" }),
+        : { text: "How to play" }),
       url: "/about",
-    },
-    {
-      text: "Guides",
-      url: "/guides",
     },
   ];
 
@@ -190,8 +174,7 @@ const NavBar = () => {
       position="static"
       sx={{
         boxShadow: "none",
-        background: "white",
-        borderBottom: "2px solid #E5E5E5",
+        background: "none",
         padding: "5px 0",
       }}
     >
@@ -208,7 +191,6 @@ const NavBar = () => {
               fontFamily: "Poppins",
               cursor: "pointer",
             }}
-            
           >
             <Image src={Logo} alt="Logo" />
           </Link>
@@ -218,34 +200,42 @@ const NavBar = () => {
             sx={{
               flexGrow: 1,
               display: { xs: "none", lg: "flex" },
-              justifyContent: "center",
-              alignContent: "center",
+              justifyContent: "flex-end",
+              alignContent: "right",
               gap: { xs: "0px", md: "0px", lg: "15px" },
             }}
           >
-            {router.pathname === "/hydroma" ? (
-              ""
-            ) : (
-              <>
-                {pages.map((page) => (
-                  <Button
-                    key={page.text}
-                    sx={{
-                      my: 2,
-                      color: "black",
-                      display: "block",
-                      textTransform: "none",
-                      minWidth: "0px",
-                      fontSize: "0.9rem",
-                      fontWeight: "400",
-                    }}
-                    onClick={() => router.push(`${page.url}`)}
-                  >
-                    {page.text}
-                  </Button>
-                ))}
-              </>
-            )}
+            {pages.map((page) => (
+              <Button
+                sx={{
+                  backgroundColor: "transparent",
+                  width: "auto",
+                  height: "55px",
+                  color: "white",
+                  padding: "20px 40px",
+                  borderRadius: "50px",
+                  fontWeight: "400",
+                  fontSize: "1.125rem",
+                  transition: "all 0.3s ease",
+                  fontFamily: "Righteous",
+                  textTransform: "uppercase",
+                  mr: "20px",
+                  "&:hover &:after": {
+                    transform: "scaleX(1)",
+                  },
+                  "&:after": {
+                    display: "block",
+                    borderBottom: "solid 3px #019fb6",
+                    transform: "scaleX(0)",
+                    transition: "transform 250ms ease-in-out",
+                  },
+                }}
+                key={page.text}
+                onClick={() => router.push(`${page.url}`)}
+              >
+                {page.text}
+              </Button>
+            ))}
           </Box>
           {/* Enter App Mobile */}
           <Box
@@ -260,7 +250,7 @@ const NavBar = () => {
               <ConnectRainbow />
             ) : (
               <Button
-                variant="secondaryConnect"
+                variant="enterApp"
                 startIcon={<Image src={Portail} alt="Agora Portail Icon" />}
                 onClick={() =>
                   window.open("https://app.agorabank.io/", "_blank")
@@ -285,13 +275,13 @@ const NavBar = () => {
               variant="contained"
               disableElevation
               onClick={handleClick}
-              endIcon={<KeyboardArrowRight />}
-              startIcon={<Public />}
+              endIcon={<KeyboardArrowRight sx={{ color: "white" }} />}
+              startIcon={<Public sx={{ color: "white" }} />}
               sx={[
                 {
                   display: { xs: "flex", sm: "flex", md: "flex" },
                   background: "transparent",
-                  color: "black",
+                  color: "white",
                   "&:hover": {
                     backgroundColor: "hwb(210deg 10% 18% / 4%)",
                   },
@@ -342,19 +332,20 @@ const NavBar = () => {
           {/* Enter App Desktop */}
           <Box
             sx={{
-              flexGrow: 0,
               display: { xs: "none", sm: "none", lg: "flex" },
-              color: "black",
+              color: "white",
             }}
           >
-            {router.pathname === "/hydroma" ? (
+            {router.pathname === "/dashboard" ? (
               <ConnectRainbow />
             ) : (
               <Button
-                variant="secondaryConnect"
-                startIcon={<Image src={Portail} alt="Agora Portail Icon" />}
+                variant="enterApp"
+                startIcon={
+                  <Image src={Portail} width={30} alt="Portail Icon" />
+                }
                 onClick={() =>
-                  window.open("https://app.agorabank.io/", "_blank")
+                  window.open("https://app.pumpme.io/dashboard", "_blank")
                 }
               >
                 {t("enter-app")}
@@ -423,11 +414,6 @@ const NavBar = () => {
                   Français
                 </MenuItem>
               </Link>
-              {/*
-              <MenuItem onClick={handleClose} disableRipple>
-                Espagnol
-              </MenuItem>
-            */}
             </StyledMenu>
             {/* Hamgurger */}
             <Box
@@ -513,56 +499,29 @@ const NavBar = () => {
                     alignItems: "center",
                   }}
                 >
-                  <Box
-                    onClick={() =>
-                      window.open(
-                        "",
-                        "_blank"
-                      )
-                    }
-                  >
+                  <Box onClick={() => window.open("", "_blank")}>
                     <Image src={DiscordImg} alt="Discord Icon" />
                   </Box>
-                  <Box
-                    onClick={() =>
-                      window.open(
-                        "",
-                        "_blank"
-                      )
-                    }
-                  >
+                  <Box onClick={() => window.open("", "_blank")}>
                     <Image src={LinkedinImg} alt="" />
                   </Box>
-                  <Box
-                    onClick={() =>
-                      window.open("", "_blank")
-                    }
-                  >
+                  <Box onClick={() => window.open("", "_blank")}>
                     <Image src={TwitterImg} alt="" />
                   </Box>
-                  <Box
-                    onClick={() =>
-                      window.open(
-                        "",
-                        "_blank"
-                      )
-                    }
-                  >
+                  <Box onClick={() => window.open("", "_blank")}>
                     <Image src={InstagramImg} alt="" />
                   </Box>
-                  <Box
-                    onClick={() =>
-                      window.open("", "_blank")
-                    }
-                  >
+                  <Box onClick={() => window.open("", "_blank")}>
                     <Image src={TelegramImg} alt="Agora Telegram Icon" />
                   </Box>
                 </MenuItem>
 
                 <MenuItem sx={{ display: "flex", justifyContent: "center" }}>
                   <Button
-                    variant="secondaryConnect"
-                    startIcon={<Image src={Portail} alt="Agora Portail Icon" />}
+                    variant="enterApp"
+                    startIcon={
+                      <Image src={Portail} width={3} alt="Agora Portail Icon" />
+                    }
                     sx={{
                       width: "185px",
                       mt: "15px",

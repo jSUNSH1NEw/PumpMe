@@ -24,25 +24,25 @@ import { ThemeProvider } from "@mui/material";
 import { GlobalStyle } from "../styles/layout/global";
 import { PumpTheme } from "../styles/layout/theme";
 
+declare module "@mui/material/styles" {
+  interface BreakpointOverrides {
+    xs: true;
+    sm: true;
+    md: true;
+    lg: true;
+    xl: true;
+    xxl: true;
+  }
+}
 declare module "@mui/material/Button" {
   interface ButtonPropsVariantOverrides {
     navbar: true;
     sidebar: true;
     dashboard: true;
     primaryConnect: true;
-    secondaryConnect: true;
+    enterApp: true;
     wrongNetwork: true;
     choseNetwork: true;
-  }
-}
-declare module "@mui/material/styles" {
-  interface BreakpointOverrides {
-    xs: true; 
-    sm: true;
-    md: true;
-    lg: true;
-    xl: true;
-    xxl: true;
   }
 }
 

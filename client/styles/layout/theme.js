@@ -9,6 +9,7 @@ export const PumpTheme = createTheme({
       "-apple-system",
       "BlinkMacSystemFont",
       '"Segoe UI"',
+      '"Righteous"',
     ].join(","),
   },
 
@@ -80,7 +81,6 @@ export const PumpTheme = createTheme({
       variants: [
         {
           props: { variant: "primaryConnect" },
-
           style: {
             backgroundColor: "transparent",
             border: "2px solid #2D2D2D",
@@ -113,12 +113,11 @@ export const PumpTheme = createTheme({
           },
         },
         {
-          props: { variant: "secondaryConnect" },
-
+          props: { variant: "enterApp" },
           style: {
             backgroundColor: "transparent",
             border: "1px solid #B3CEFF",
-            width: "134px",
+            width: "auto",
             height: "55px",
             color: "#B3CEFF",
             padding: "20px 40px",
