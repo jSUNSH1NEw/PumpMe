@@ -14,8 +14,8 @@ declare global {
   
   type PUMPMEContractList = {
     chainId: number;
-    pool: string;
-    Contract1: string;
+    lottery: string;
+    lotteryFactory: string;
     stable?: string;
     owner?:"string"
   };

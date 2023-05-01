@@ -22,7 +22,16 @@ async function main() {
     await pumpMeBase.deployTransaction.wait(6); // Attendre 6 block après le déploiment
     await verify(pumpMeBase.address, []);
   }
+
+    const contractAddresses = {
+        pumpeMebase: pumpMeBase.address,
+        lottery: lottery.address,
+        factory: factory.address,
+    };
+    storeContractAddresses("goerli", contractAddresses);
 }
+
+
 
 // We recommend this pattern to be able to use async/await everywhere
 // and properly handle errors.
@@ -30,3 +39,17 @@ main().catch((error) => {
   console.error(error);
   process.exitCode = 1;
 });
+
+const storeContractAddresses = (fileName: string, jsonData: {}) => {
+    const fs = require("fs");
+
+    fs.writeFileSync(
+        `./${fileName}.json`,
+        JSON.stringify(jsonData),
+        function (err: any) {
+            if (err) {
+                console.log(err);
+            }
+        }
+    );
+};

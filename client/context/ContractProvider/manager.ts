@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import { CONTRACT_INITIAL_STATE } from "./model";
 import { contractAddresses } from "../../config";
 import { ethers } from "ethers";
-import pool from "../../artifacts/";
-import Contract1 from "../../artifacts/";
-import stableJSON from "../../artifacts/";
+import lottery from "../../artifacts/Lottery.sol/Lottery.json";
+import lotteryFactory from "../../artifacts/LotteryFactory.sol/LotteryFactory.json";
+import stableJSON from "../../artifacts/PumpMeBase.sol/PumpMeBase.json";
 
 // import UMATCHNFTJSON from "../../artifacts/contracts/Umatch.sol/Umatch.json";
 // import UMATCHNFTShopJSON from "../../artifacts/contracts/ArtysPassShop.sol//ArtysPassShop.json";
@@ -30,14 +30,14 @@ const useContractManager = () => {
         if (addresses && account) {
             setState({
                 ...state,
-                pool: new ethers.Contract(
-                    addresses.pool as string,
-                    pool.abi,
+                lottery: new ethers.Contract(
+                    addresses.lottery as string,
+                    lottery.abi,
                     account
                 ),
-                Contract1: new ethers.Contract(
-                    addresses.Contract1 as string,
-                    Contract1.abi,
+                lotteryFactory: new ethers.Contract(
+                    addresses.lotteryFactory as string,
+                    lotteryFactory.abi,
                     account
                 ),
             });

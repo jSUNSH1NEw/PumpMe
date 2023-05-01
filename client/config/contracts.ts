@@ -4,8 +4,8 @@
 export const contractAddresses: PUMPMEContractList[] = [
     {
         chainId: 5,
-        pool: goerliAddresses["contractFakeUSDT"],
-        Contract1: goerliAddresses["contract721Address"],
+        lottery: goerliAddresses["lottery"],
+        lotteryFactory: goerliAddresses["lotteryFactory"],
     },
     // {
     //     chainId: 1,

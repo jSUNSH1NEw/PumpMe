@@ -3,29 +3,48 @@ import "@nomicfoundation/hardhat-toolbox";
 import "dotenv/config"
 import "@typechain/hardhat"
 
-const ALCHEMY_MAINNET = process.env.ALCHEMY_MAINNET || "";
-const GOERLI_RPC_URL = process.env.INFURA_GOERLI || "";
-const PRIVATE_KEY_TEST = process.env.PRIVATE_KEY_TEST || "";
-const ETHERSCAN = process.env.ETHERSCAN || "";
+
+
+
+import { config as dotenvConfig } from "dotenv";
+import { resolve } from "path";
+import "solidity-coverage";
+dotenvConfig({ path: resolve(__dirname, "./.env") });
+
+const MNEMONIC = process.env.MNEMONIC || "";
 
 const config: HardhatUserConfig = {
-  solidity: "0.8.9",
   defaultNetwork: "hardhat",
+   paths: {
+        artifacts: "./artifacts",
+    },
+    solidity: {
+        compilers: [
+            {
+                version: "0.8.9",
+            },
+        ],
+        settings: {
+            optimizer: {
+                enabled: true,
+                runs: 1000,
+            },
+        },
+    },
   networks: {
     hardhat: {
-      forking: {
-        url: ALCHEMY_MAINNET,
-        blockNumber: 16868300
-      }
+      accounts: {
+        mnemonic: MNEMONIC,
+      },
     },
     goerli: {
-      url: GOERLI_RPC_URL,
-      accounts: [PRIVATE_KEY_TEST],
+      url: process.env.GOERLI_RPC,
+      accounts: [MNEMONIC],
       chainId: 5
     }
   },
   etherscan: {
-    apiKey: ETHERSCAN
+    apiKey: process.env.ETHERSCAN_API_KEY,
   },
   gasReporter: {
     enabled: true, 
