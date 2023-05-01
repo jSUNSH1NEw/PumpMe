@@ -3,7 +3,7 @@ import { CONTRACT_INITIAL_STATE } from "./model";
 import { contractAddresses } from "../../config";
 import { ethers } from "ethers";
 import lottery from "../../artifacts/Lottery.sol/Lottery.json";
-import lotteryFactory from "../../artifacts/LotteryFactory.sol/LotteryFactory.json";
+import factory from "../../artifacts/LotteryFactory.sol/LotteryFactory.json";
 import stableJSON from "../../artifacts/PumpMeBase.sol/PumpMeBase.json";
 
 // import UMATCHNFTJSON from "../../artifacts/contracts/Umatch.sol/Umatch.json";
@@ -37,7 +37,7 @@ const useContractManager = () => {
                 ),
                 lotteryFactory: new ethers.Contract(
                     addresses.lotteryFactory as string,
-                    lotteryFactory.abi,
+                    factory.abi,
                     account
                 ),
             });

@@ -216,7 +216,7 @@ export const PumpTheme = createTheme({
   },
 });
 
-MuiTheme.typography.h1 = {
+PumpTheme.typography.h1 = {
   color: "black",
   fontWeight: "700",
   fontSize: "68px",
@@ -226,17 +226,17 @@ MuiTheme.typography.h1 = {
   },
 };
 
-MuiTheme.typography.h2 = {
+PumpTheme.typography.h2 = {
   color: "black",
 };
-MuiTheme.typography.h3 = {
+PumpTheme.typography.h3 = {
   fontWeight: "200",
   textTransform: "uppercase",
   fontSize: "1.125rem",
   letterSpacing: "0.1em",
   color: "#FFFFFF",
 };
-MuiTheme.typography.subtitle1 = {
+PumpTheme.typography.subtitle1 = {
   fontWeight: "400",
   textTransform: "uppercase",
   fontSize: "22px",
@@ -244,12 +244,12 @@ MuiTheme.typography.subtitle1 = {
   color: "#FFFFFF",
 };
 
-MuiTheme.typography.subtitle2 = {
+PumpTheme.typography.subtitle2 = {
   fontWeight: "300",
   fontSize: "16px",
   color: "#FFFFFF",
 };
-MuiTheme.typography.body2 = {
+PumpTheme.typography.body2 = {
   fontWeight: "300",
   fontSize: "16px",
   color: "#7C8BA0",

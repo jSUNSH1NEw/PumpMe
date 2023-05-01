@@ -14,19 +14,16 @@ import {
 } from "@mui/material/";
 import Menu, { MenuProps } from "@mui/material/Menu";
 import { styled } from "@mui/material/styles";
-import Logo from "../../public/images/logo.svg";
-import PhoneLogo from "../../public/images/phoneLogo.svg";
+import Logo from "../../../public/img/Logo.png";
 import { KeyboardArrowRight, Label, Public } from "@mui/icons-material/";
-import PortailImg from "../../public/images/portail.svg";
-import CloseIcon from "../../public/images/iconClose.svg";
-import HamburgerIcon from "../../public/images/iconHamburger.svg";
-import DiscordImg from "../../public/images/discord.svg";
-import LinkedinImg from "../../public/images/linkedin.svg";
-import TwitterImg from "../../public/images/twitter.svg";
-import InstagramImg from "../../public/images/instagram.svg";
-import TelegramImg from "../../public/images/telegram.svg";
-import Portail from "../../public/images/portail.svg";
-import GradiantBackground from "../../public/images/gradiantNavbar.svg";
+import CloseIcon from "../../../public/img/closeIcon.png";
+import HamburgerIcon from "../../../public/img/Hamburger.png";
+import DiscordImg from "../../../public/img/DiscordIcon.png";
+import LinkedinImg from "../../../public/img/LinkedIn.png";
+import TwitterImg from "../../../public/img/TwitterIcon.png";
+import InstagramImg from "../../../public/img/Instagram.png";
+import TelegramImg from "../../../public/img/TelegramIcon.png";
+import Portail from "../../../public/img/Portail1.png";
 import { useTranslation } from "next-i18next";
 import { i18n } from "i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
@@ -264,7 +261,7 @@ const NavBar = () => {
             ) : (
               <Button
                 variant="secondaryConnect"
-                startIcon={<Image src={PortailImg} alt="Agora Portail Icon" />}
+                startIcon={<Image src={Portail} alt="Agora Portail Icon" />}
                 onClick={() =>
                   window.open("https://app.agorabank.io/", "_blank")
                 }
@@ -355,7 +352,7 @@ const NavBar = () => {
             ) : (
               <Button
                 variant="secondaryConnect"
-                startIcon={<Image src={PortailImg} alt="Agora Portail Icon" />}
+                startIcon={<Image src={Portail} alt="Agora Portail Icon" />}
                 onClick={() =>
                   window.open("https://app.agorabank.io/", "_blank")
                 }
