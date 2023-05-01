@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import { CONTRACT_INITIAL_STATE } from "./model";
 import { contractAddresses } from "../../config";
 import { ethers } from "ethers";
-import pool from "../../artifacts/contracts/ArtysPass.sol/ArtysPass.json";
-import Contract1 from "../../artifacts/contracts/ArtysPassShop.sol/ArtysPassShop.json";
-import stableJSON from "../../artifacts/contracts/mocks/MockStable.sol/Stable.json";
+import pool from "../../artifacts/";
+import Contract1 from "../../artifacts/";
+import stableJSON from "../../artifacts/";
 
 // import UMATCHNFTJSON from "../../artifacts/contracts/Umatch.sol/Umatch.json";
 // import UMATCHNFTShopJSON from "../../artifacts/contracts/ArtysPassShop.sol//ArtysPassShop.json";

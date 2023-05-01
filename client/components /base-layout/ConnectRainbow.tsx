@@ -38,7 +38,7 @@ export const ConnectRainbow = () => {
             {(() => {
               if (!connected) {
                 return (
-                  <Button onClick={openConnectModal} variant="primary">
+                  <Button onClick={openConnectModal} variant="primaryConnect">
                     Connect Wallet
                   </Button>
                 );

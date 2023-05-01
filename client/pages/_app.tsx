@@ -18,15 +18,38 @@ import "@rainbow-me/rainbowkit/styles.css";
 import { RainbowKitProvider, midnightTheme } from "@rainbow-me/rainbowkit";
 
 import { ToastContainer } from "react-toastify";
-
 import "react-toastify/dist/ReactToastify.css";
+
+import { ThemeProvider } from "@mui/material";
+import { GlobalStyle } from "../styles/layout/global";
+import { PumpTheme } from "../styles/layout/theme";
 
 declare module "@mui/material/Button" {
   interface ButtonPropsVariantOverrides {
-    primary: true;
-    secondary: true;
+    navbar: true;
+    sidebar: true;
+    dashboard: true;
+    primaryConnect: true;
+    secondaryConnect: true;
     wrongNetwork: true;
     choseNetwork: true;
+  }
+}
+declare module "@mui/material/styles" {
+  interface BreakpointOverrides {
+    xs: true; 
+    sm: true;
+    md: true;
+    lg: true;
+    xl: true;
+    xxl: true;
+  }
+}
+
+declare module "@mui/material/Card" {
+  interface CardPropsVariantOverrides {
+    landingCard: true;
+    DashboardCard: true;
   }
 }
 
@@ -96,12 +119,15 @@ export default function App({ Component, pageProps }: AppProp) {
               })}
             >
               <ContractProvider>
-                {getLayout(
-                  <>
-                    <ToastContainer />
-                    <Component {...pageProps} />
-                  </>
-                )}
+                <ThemeProvider theme={PumpTheme}>
+                  <GlobalStyle />
+                  {getLayout(
+                    <>
+                      <ToastContainer />
+                      <Component {...pageProps} />
+                    </>
+                  )}
+                </ThemeProvider>
               </ContractProvider>
             </RainbowKitProvider>
           </RainbowKitSiweNextAuthProvider>

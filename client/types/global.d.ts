@@ -16,16 +16,10 @@ declare global {
     chainId: number;
     pool: string;
     Contract1: string;
-    Contract2: string;
     stable?: string;
+    owner?:"string"
   };
 
-  type NFT = {
-    id: number;
-    name: string;
-    description: string;
-    price: number;
-};
   
   type Chain = {
     chainId: number;
@@ -46,18 +40,3 @@ declare global {
     wrappedAddress?: string;
   };
 
-
-type PropsRef = {
-    address: string | any,
-    code: string | string[]
-    nftNum: string | string[] | [""]
-    date: string | number | number[] | [""]
-};
-
-interface IRefData {
-    id: string
-    address: string | any,
-    code: string | string[] | [""] | any,
-    nftNum: string | string[] | [""],
-    date: number | number[] | [""]
-  };

@@ -1,8 +1,8 @@
 import { useContext, createContext} from "react";
 
-import { ContractState, CONTRACT_INITIAL_STATE } from "./model";
+import { PUMPMEContractState, CONTRACT_INITIAL_STATE } from "./model";
 
-export const ContractContext = createContext<ContractState>(
+export const ContractContext = createContext<PUMPMEContractState>(
     CONTRACT_INITIAL_STATE
 );
 

@@ -2,13 +2,18 @@ import {createGlobalStyle} from "styled-components"
 
 
 export const GlobalStyle = createGlobalStyle`
-* {
+*,*::before,*::after,h1,h2,h3,h4,h5,h6 {
     margin: 0;
     padding: 0;
-    font-family: "Poppins", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  }
+  h&,h2,h3,h4,h5,h6 {
+    display: inline-block;
   }
   body {
-    background: white;
+    margin: 0;
+    padding: 0;
+    overflow-x:hidden;
+    font-family: "Poppins", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   }
 `

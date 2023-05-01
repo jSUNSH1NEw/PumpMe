@@ -2,7 +2,7 @@ import { createTheme } from "@mui/material/styles";
 
 import { keyframes } from "styled-components";
 
-export const MuiTheme = createTheme({
+export const PumpTheme = createTheme({
   typography: {
     fontFamily: [
       '"Poppins"',
@@ -11,11 +11,46 @@ export const MuiTheme = createTheme({
       '"Segoe UI"',
     ].join(","),
   },
+
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 600,
+      md: 900,
+      lg: 1200,
+      xl: 1536,
+      xxl: 1836,
+    },
+  },
   components: {
     MuiTabs: {
       variants: [
         {
-          props: { variant: "fullWidth" },
+          props: { variant: "landingCard" },
+          style: {
+            backgroundColor: "#1D1D2E",
+            borderRadius: "30px",
+            textTransform: "none",
+
+            ".MuiTab-root": {
+              color: "#9E9FA1",
+              padding: "30px 0px",
+              textTransform: "none",
+              fontFamily: "ManropeBold",
+              background: "#1D1D2E",
+            },
+            ".MuiTab-root.Mui-selected": {
+              color: "white",
+              borderBottom: "0px solid",
+              background: "#11111B",
+            },
+            ".MuiTabs-indicator": {
+              display: "none",
+            },
+          },
+        },
+        {
+          props: { variant: "dashboardCard" },
           style: {
             backgroundColor: "#1D1D2E",
             borderRadius: "30px",
@@ -44,7 +79,7 @@ export const MuiTheme = createTheme({
       defaultProps: {},
       variants: [
         {
-          props: { variant: "primary" },
+          props: { variant: "primaryConnect" },
 
           style: {
             backgroundColor: "transparent",
@@ -78,7 +113,7 @@ export const MuiTheme = createTheme({
           },
         },
         {
-          props: { variant: "secondary" },
+          props: { variant: "secondaryConnect" },
 
           style: {
             backgroundColor: "transparent",
@@ -157,7 +192,7 @@ export const MuiTheme = createTheme({
           },
         },
         {
-          props: { variant: "contained" },
+          props: { variant: "navbar" },
 
           style: {
             background: "#0F1238",
