@@ -24,6 +24,31 @@ export const PumpTheme = createTheme({
     },
   },
   components: {
+    MuiCheckbox: {
+      variants: [
+        {
+          props: { variant: "acceptRules" },
+          style: {
+            backgroundColor: "#1D1D2E",
+            borderRadius: "30px",
+            textTransform: "none",
+
+            ".MuiCheckbox-root": {
+              color: "#9E9FA1",
+              padding: "30px 0px",
+              textTransform: "none",
+              fontFamily: "ManropeBold",
+              background: "#1D1D2E",
+            },
+            ".MuiCheckbox-root.Mui-selected": {
+              color: "white",
+              borderBottom: "0px solid",
+              background: "#11111B",
+            },
+          },
+        },
+      ],
+    },
     MuiTabs: {
       variants: [
         {
@@ -116,27 +141,32 @@ export const PumpTheme = createTheme({
           props: { variant: "enterApp" },
           style: {
             backgroundColor: "transparent",
-            border: "1px solid #B3CEFF",
-            width: "auto",
+            border: "2px solid white",
+            width: "233px",
             height: "55px",
-            color: "#B3CEFF",
+            color: "white",
+            fontWeight: "800",
             padding: "20px 40px",
             borderRadius: "50px",
-            fontWeight: "400",
             textTransform: "none",
             fontSize: "1.125rem",
-            transition: "all 0.3s ease",
+            transition: "all 0.7s ease",
             fontFamily: "Poppins",
 
             "&:hover": {
-              color: "#B3CEFF",
-              background:
-                "linear-gradient(180.09deg, rgba(1, 110, 255, 0.5) -44.32%, rgba(1, 96, 247, 0) 99.93%)",
+              boxShadow: "inset 233px 0 0 0 rgba(0, 0, 0, 0.39)",
+              color: "white",
             },
             "&:active": {
-              background: "#005BFF",
-              color: "#B3CEFF",
+              background: "#2D2D2D",
+              color: "#fffff",
+              border: "1px solid #2D2D2D",
               transition: "all 0.3s ease",
+            },
+            "&:disabled": {
+              color: "#9E9FA1",
+              background: "#1D1D2E",
+              border: "#1D1D2E",
             },
           },
         },
@@ -193,6 +223,45 @@ export const PumpTheme = createTheme({
         {
           props: { variant: "navbar" },
 
+          style: {
+            background: "#0F1238",
+            border: "1px solid #242424",
+            padding: "10px 20px",
+            height: "47px",
+            color: "#00ACFF",
+            borderRadius: "50px",
+            fontFamily: "Poppins",
+            textTransform: "none",
+            transition: "all 0.7s ease",
+
+            "&:hover": {
+              boxShadow: "14px 14px 50px 0#f0f",
+            },
+            "&:active": {},
+          },
+        },
+        {
+          props: { variant: "sidebar" },
+
+          style: {
+            background: "#0F1238",
+            border: "1px solid #242424",
+            padding: "10px 20px",
+            height: "47px",
+            color: "#00ACFF",
+            borderRadius: "50px",
+            fontFamily: "Poppins",
+            textTransform: "none",
+            transition: "all 0.7s ease",
+
+            "&:hover": {
+              boxShadow: "14px 14px 50px 0#f0f",
+            },
+            "&:active": {},
+          },
+        },
+        {
+          props: { variant: "dashboard" },
           style: {
             background: "#0F1238",
             border: "1px solid #242424",

@@ -53,6 +53,12 @@ declare module "@mui/material/Card" {
   }
 }
 
+declare module "@mui/material/Checkbox" {
+  interface CheckboxPropsVariantOverrides {
+    AcceptRules: true;
+  }
+}
+
 type NextPageWithLayout = NextPage & {
   getLayout?: (page: ReactElement) => ReactNode;
 };

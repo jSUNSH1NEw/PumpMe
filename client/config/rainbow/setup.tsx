@@ -26,7 +26,7 @@ const connectors = connectorsForWallets([
       walletConnectWallet({ chains }),
       ledgerWallet({ chains }),
       coinbaseWallet({
-        appName: "Artys / Umatch ",
+        appName: "Pump-Me",
         chains: chains,
       }),
     ],
